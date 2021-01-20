@@ -5,17 +5,17 @@ pipeline {
         stage('Build') {
             steps {
                 //sh 'help'
-                archiveArtifacts artifacts: '*.jar', fingerprint: true
-                //sh 'javac src/jenkins_test/Jenkins_Test.java'
+                //archiveArtifacts artifacts: '*.jar', fingerprint: true
+                sh 'javac src/jenkins_test/Jenkins_Test.java'
             }
         }
         stage('Test') {
             steps {
                 //sh 'chmod 777 unitTests.xml'
-                junit '*.xml'
-                //sh 'cd src'
-                //sh 'ls'
-                //sh 'java jenkins_test.Jenkins_Test'
+                //junit 'unitTests.xml'
+                sh 'cd ./src'
+                sh 'ls'
+                sh 'java jenkins_test.Jenkins_Test'
             }
         }
         stage('Deploy') {
