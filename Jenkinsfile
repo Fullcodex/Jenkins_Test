@@ -6,7 +6,7 @@ pipeline {
             steps {
                 //sh 'help'
                 //sh 'makefile' 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+                archiveArtifacts artifacts: '**/src/*.jar', fingerprint: true 
             }
         }
         stage('Test') {
