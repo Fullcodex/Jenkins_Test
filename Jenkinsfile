@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 //sh 'chmod 777 unitTests.xml'
-                junit 'unitTests.xml'
+                junit 'unitTests*.xml'
                 sh 'cd src && java jenkins_test.Jenkins_Test'
             }
         }
