@@ -16,7 +16,7 @@ pipeline {
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
                 //sh 'make check || true' 
-                junit 'unitTests.xml'
+                junit '*/unitTests.xml'
                 //sh 'cd src'
                 //sh 'ls'
                 //sh 'java jenkins_test.Jenkins_Test'
