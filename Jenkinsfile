@@ -13,9 +13,7 @@ pipeline {
             steps {
                 //sh 'chmod 777 unitTests.xml'
                 //junit 'unitTests.xml'
-                sh 'cd ./src'
-                sh 'ls'
-                sh 'java jenkins_test.Jenkins_Test'
+                sh 'java src/jenkins_test.Jenkins_Test'
             }
         }
         stage('Deploy') {
