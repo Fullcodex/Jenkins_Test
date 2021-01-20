@@ -16,7 +16,7 @@ pipeline {
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
                 //sh 'make check || true' 
-                sh 'chmod 7 7 7 unitTest.xml'
+                sh 'chmod 777 unitTest.xml'
                 junit 'unitTests.xml'
                 //sh 'cd src'
                 //sh 'ls'
