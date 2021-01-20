@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'help'
-                sh 'make' 
+                sh 'makefile' 
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
