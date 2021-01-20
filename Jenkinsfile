@@ -18,6 +18,7 @@ pipeline {
                 //sh 'make check || true' 
                 //junit '**/target/*.xml'
                 sh 'cd src'
+                sh 'ls'
                 sh 'java jenkins_test.Jenkins_Test'
             }
         }
