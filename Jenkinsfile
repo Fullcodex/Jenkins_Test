@@ -6,7 +6,8 @@ pipeline {
             steps {
                 //sh 'help'
                 //sh 'makefile' 
-                archiveArtifacts artifacts: '**/src/*.jar', fingerprint: true 
+                //archiveArtifacts artifacts: '**/src/*.jar', fingerprint: true
+                sh 'javac src/jenkins_test/Jenkins_Test.java'
             }
         }
         stage('Test') {
@@ -14,8 +15,10 @@ pipeline {
                 /* `make check` returns non-zero on test failures,
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
-                sh 'make check || true' 
-                junit '**/target/*.xml' 
+                //sh 'make check || true' 
+                //junit '**/target/*.xml'
+                sh 'cd src'
+                sh 'java jenkins_test.Jenkins_Test'
             }
         }
         stage('Deploy') {
