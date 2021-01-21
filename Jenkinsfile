@@ -19,7 +19,7 @@ pipeline {
               }
             }
             steps {
-                sh 'git add && git commit -a && git push test master'
+                sh 'git add. && git commit -am "push test - master" && git push test master'
             }
         }
     }
