@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'javac src/jenkins_test/Jenkins_Test.java'
                 sh 'cd src && java jenkins_test.Jenkins_Test'
-                sh 'Jenkins_Test build'
+                sh './Jenkins_Test build'
             }
         }
         stage('Test') {
