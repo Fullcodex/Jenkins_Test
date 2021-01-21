@@ -19,6 +19,7 @@ pipeline {
               }
             }
             steps {
+                sh 'git branch'
                 sh 'git commit -am "push test - master" && git push origin test:master'
             }
         }
