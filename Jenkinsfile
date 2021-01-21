@@ -19,7 +19,7 @@ pipeline {
               }
             }
             steps {
-                sh 'git commit -am "push test - master" && git push origine master'
+                sh 'git commit -am "push test - master" && git push origin master'
             }
         }
     }
