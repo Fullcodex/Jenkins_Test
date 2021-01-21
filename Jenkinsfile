@@ -5,14 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'javac src/jenkins_test/Jenkins_Test.java'
-                sh 'cd src && java jenkins_test.Jenkins_Test'
-                sh './src/jenkins_test build'
             }
         }
-        stage('Test') {
+        stage('Run') {
             steps {
-                //sh 'chmod 777 unitTests.xml'
-                junit 'unitTests.xml'
+                sh 'cd src && java jenkins_test.Jenkins_Test'
             }
         }
         stage('Deploy') {
@@ -22,7 +19,7 @@ pipeline {
               }
             }
             steps {
-                sh 'make publish'
+                sh 'git add && git commit -a && git push test master'
             }
         }
     }
